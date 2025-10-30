@@ -1,0 +1,122 @@
+[
+    {
+        "bill_id": "hr1",
+        "answers": {
+            "3": "The sponsor of the bill is not explicitly mentioned in the context, so I cannot answer this question from the provided context.",
+            "7": "I am unable to provide a response to this question as I do not have access to real-time information or the ability to conduct legislative research.",
+            "4": "This context does not provide any information about who cosponsored this bill or which members of the Congressional Budget Committee are on the bill, so I cannot answer this question from the provided context.",
+            "6": "Yes, there are several amendments proposed on the bill.\n\n**Amendment 2850**\n\n* Proposed by: Committee on Budget\n* Number: 2850\n* Type: SAMDT\n* Update Date: 2025-07-02T11:08:27Z\n* URL: https://api.congress.gov/v3/amendment/119/samdt/2850?format=json\n\nThe amendment proposes an increase in the statutory debt limit by $4 trillion.",
+            "2": "This bill is in the Budget Committee.\n\nThe passage does not specify which committees this bill is in, so I cannot answer this question from the provided context.",
+            "1": "This bill increases the statutory debt limit by $4 trillion. It is presented to the President for his signature.\n\nThe bill is in the process of being considered by the House of Representatives and the Senate.",
+            "5": "No, I am unable to provide an answer to this question as I do not have access to real-time information or the ability to search for recent legislative activity."
+        }
+    },
+    {
+        "bill_id": "hr5371",
+        "answers": {
+            "6": "The context does not provide any information about amendments proposed on the bill, so I cannot answer this question from the provided context.",
+            "2": "This bill is in the Budget Committee.\n\nThe context does not specify which committees the bill is in, so I cannot answer this question from the provided context.",
+            "3": "The sponsor of the Continuing Appropriations and Extensions Act, 2026 is not mentioned in the context, so I cannot answer this question from the provided context.",
+            "7": "I am unable to provide a response to this question as I do not have access to real-time legislative information. For the most up-to-date information on the bill's status and any relevant votes, please refer to official legislative sources or a reputable news source.",
+            "4": "The context does not provide information about who cosponsored the bill or which cosponsors are on the Budget Committee, so I cannot answer this question from the provided context.",
+            "1": "The Continuing Appropriations and Extensions Act, 2026 provides continuing FY2026 appropriations for federal agencies, provides additional funding for security for federal officials, and extends various expiring programs and authorities.\n\nThe bill is currently in the process of being considered by the Budget Committee in the House of Representatives.",
+            "5": "The context does not provide any information about hearings on the bill, so I cannot answer this question from the provided context."
+        }
+    },
+    {
+        "bill_id": "hr5401",
+        "answers": {
+            "3": "Sure, here is the answer to your question:\n\nThe sponsor of the Pay Our Troops Act of 2026 is Rep. Kiggans, Jennifer A. [R-VA-2].",
+            "1": "The context does not provide any information about what the Pay Our Troops Act of 2026 does, where it is in the process, or any relevant facts about its status. Therefore, I cannot answer this question from the provided context.",
+            "7": "I am unable to access real-time legislative information, therefore I cannot answer this question. For the most up-to-date information on the Pay Our Troops Act of 2026, please refer to legislative databases such as the House of Representatives website or the Congressional Research Service website.",
+            "4": "The context does not provide information about who cosponsored the Pay Our Troops Act of 2026, or which cosponsors are on the Appropriations Committee, so I cannot answer this question from the provided context.",
+            "6": "I am unable to access real-time legislative information, therefore I cannot provide a response to this question. For the most up-to-date information on amendments and legislative changes, please refer to official legislative sources such as the House of Representatives website or the Congressional Record.",
+            "2": "The Pay Our Troops Act of 2026 is currently being considered by the Appropriations Committee in the House of Representatives.",
+            "5": "I am unable to access real-time information or access legislative databases, therefore I cannot answer this question."
+        }
+    },
+    {
+        "bill_id": "s2296",
+        "answers": {
+            "7": "The context does not provide any information about whether any votes have happened on the bill or whether it was a party-line or bipartisan vote. Therefore, I cannot answer this question from the provided context.",
+            "4": "The context does not provide information about who cosponsored the bill or which cosponsors are on the committee, so I cannot answer this question from the provided context.",
+            "3": "The sponsor of the amendment is not mentioned in the context, so I cannot answer this question from the provided context.",
+            "6": "Yes, two amendments have been proposed on the bill:\n\n**Amendment 3926:**\n* Proposed by Senator Risch\n* Aims to protect the national security of the United States by imposing sanctions with respect to certain persons of the People's Republic of China and prohibiting and requiring notifications with respect to certain investments by United States persons in the People's Republic of China.\n\n**Amendment 3927:**\n* Proposed by Senator Thune\n* Limits the use of Federal law enforcement officers for crowd control and other purposes.",
+            "2": "The bill is in the Armed Services Committee.\n\nThe context does not specify which committees the bill is in, so I cannot answer this question from the provided context.",
+            "1": "The context does not provide information about what the bill does or where it is in the process, so I cannot answer this question from the provided context.",
+            "5": "The context does not provide any information about hearings held on the bill, so I cannot answer this question from the provided context."
+        }
+    },
+    {
+        "bill_id": "s24",
+        "answers": {
+            "1": "This bill designates the facility of the U.S. Postal Service located at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\".\n\nThe bill is currently in the Senate and has been referred to the Committee on Homeland Security and Governmental Affairs.",
+            "3": "Sure, here's the answer to your question:\n\nThe sponsor of the bill to designate the facility of the U.S. Postal Service located at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\" is Senator Crapo, Mike [R-ID] (R).",
+            "4": "The context does not provide information about who cosponsored the bill, or which cosponsors are on the Committee on Homeland Security and Governmental Affairs, so I cannot answer this question from the provided context.",
+            "7": "I am unable to provide a response to this question as I do not have access to real-time legislative information. For the most up-to-date information on the bill's status and any potential votes, please refer to official legislative sources or consult with a political analyst.",
+            "2": "The bill is currently in the Senate Homeland Security and Governmental Affairs Committee.\n\nRelevant fact: The bill was introduced in the Senate on [Date].",
+            "6": "The context does not provide any information about amendments to the bill, so I cannot answer this question from the provided context.",
+            "5": "I am unable to provide a response to this question as I do not have access to real-time information or the ability to conduct further research."
+        }
+    },
+    {
+        "bill_id": "s2882",
+        "answers": {
+            "3": "The context does not specify the sponsor of the bill, so I cannot answer this question from the provided context.",
+            "7": "The context does not provide any information about any votes on the bill, whether they were party-line or bipartisan. Therefore, I cannot answer this question from the provided context.",
+            "4": "The context does not provide information about who cosponsored the bill or which cosponsors are on the committee that the bill is in, so I cannot answer this question from the provided context.",
+            "6": "The context does not provide any information about amendments proposed on the bill, so I cannot answer this question from the provided context.",
+            "2": "The context does not specify which committees this bill is in, so I cannot answer this question from the provided context.",
+            "1": "The Continuing Appropriations and Extensions and Other Matters Act, 2026 provides continuing FY2026 appropriations for federal agencies. It is currently in the process of being considered by the House of Representatives. \n\nThe bill has been referred to the House for consideration and has been assigned to the House Committee on Appropriations.",
+            "5": "The context does not provide any information about hearings or the findings of any hearings on the bill, so I cannot answer this question from the provided context."
+        }
+    },
+    {
+        "bill_id": "s499",
+        "answers": {
+            "1": "Sure, here's the answer to your question:\n\nThis bill provides continuing appropriations to prevent a government shutdown if an appropriations bill for a fiscal year has not been enacted before the fiscal year begins and continuing appropriations are not in effect.\n\nThe bill provides continuing appropriations at 94% of the rate for the preceding year for the first 90 days of the fiscal year. It then reduces the continuing appropriations by 1% after the first 90-day period and by an additional 1% for each subsequent 90-day period until the applicable appropriations legislation is enacted.\n\nThe bill is currently in the Senate and has been referred to the Appropriations Committee.",
+            "3": "Sure, here's the answer to your question:\n\nThe sponsor of the Government Shutdown Prevention Act of 2025 is Senator Paul, Rand [R-KY] (R).",
+            "7": "The context does not provide any information about any votes or party lines on the bill, so I cannot answer this question from the provided context.",
+            "4": "The context does not provide information about who cosponsored the bill or whether any cosponsors are on the Appropriations Committee, so I cannot answer this question from the provided context.",
+            "6": "The context does not provide any information about amendments proposed on the bill, so I cannot answer this question from the provided context.",
+            "2": "The Government Shutdown Prevention Act of 2025 is in the Appropriations Committee.\n\nAccording to the context, the bill was introduced in the Senate and referred to the Committee on Appropriations.",
+            "5": "The context does not provide any information about hearings or the findings of any hearings on the bill, so I cannot answer this question from the provided context."
+        }
+    },
+    {
+        "bill_id": "sres412",
+        "answers": {
+            "7": "The context does not provide any information about any votes or party lines, so I cannot answer this question from the provided context.",
+            "4": "The context does not provide information about who cosponsored this bill or which cosponsors are on the committee that the bill is in, so I cannot answer this question from the provided context.",
+            "3": "Sure, here's the answer to your question:\n\nThe sponsor of the executive resolution authorizing the en bloc consideration in Executive Session of certain nominations on the Executive Calendar is Senator Thune, John [R-SD] (R).",
+            "2": "The context does not specify which committees this bill is in, so I cannot answer this question from the provided context.",
+            "6": "The context does not provide any information about amendments proposed on the bill, so I cannot answer this question from the provided context.",
+            "1": "The context does not provide any information about what the bill does or where it is in the process. Therefore, I cannot answer this question from the provided context.",
+            "5": "The context does not provide any information about hearings or the findings of any hearings on the bill, so I cannot answer this question from the provided context."
+        }
+    },
+    {
+        "bill_id": "hres353",
+        "answers": {
+            "1": "The bill impeaches President Donald Trump for high crimes and misdemeanors. It sets forth seven articles of impeachment, including obstruction of justice, violation of due process, and a breach of the duty to faithfully execute laws.\n\nThe bill is currently being considered by the House of Representatives. A determination on whether to proceed with the impeachment will be made at a later date.",
+            "3": "The sponsor of the resolution is Rep. Mfume, Kweisi.",
+            "4": "Sure, here's the answer to your question:\n\nThe bill was cosponsored by Rep. Mfume, Kweisi, Nadler, Jerrold, Kelly, Schakowsky, and Green.",
+            "7": "I am unable to provide a response to this question as I do not have access to real-time information or the ability to conduct legislative research.",
+            "6": "The context does not provide any information about amendments being proposed on the bill, so I cannot answer this question from the provided context.",
+            "2": "The bill is being considered by the House Committee on the Judiciary.\n\nThe context does not specify which committee this bill is being considered by, so I cannot answer this question from the provided context.",
+            "5": "I am unable to provide a response to this question as I do not have access to real-time information or the ability to conduct live research."
+        }
+    },
+    {
+        "bill_id": "hr1968",
+        "answers": {
+            "3": "The sponsor of the bill is not explicitly mentioned in the context, so I cannot answer this question from the provided context.",
+            "7": "I am unable to provide a response to this question as I do not have access to real-time legislative information or the ability to conduct legislative research.",
+            "4": "The context does not provide information about who cosponsored the bill or which cosponsors are on the Budget Committee, so I cannot answer this question from the provided context.",
+            "6": "Yes, two amendments have been proposed on the bill:\n\n**Amendment 1288:**\n* Proposed by Rep. Jim Costa (CA-7)\n* Increases the funding for the Temporary Assistance for Needy Families (TANF) program by $1.2 billion.\n* This amendment is consistent with the provisions of H. Res. 211.\n\n**Amendment 119:**\n* Proposed by Rep. Henry Cuellar (TX-28)\n* Increases the funding for the National Flood Insurance Program by $1.5 billion.\n* This amendment is consistent with the provisions of H. Res. 211.",
+            "2": "The bill is in the Budget Committee.\n\nThe context does not provide any information about the bill's committees, so I cannot answer this question from the provided context.",
+            "1": "This bill provides continuing FY2025 appropriations for federal agencies and extends various expiring programs and authorities. It is known as a continuing resolution (CR) and prevents a government shutdown that would otherwise occur if the FY2025 appropriations bills have not been enacted when the existing CR expires on March 14, 2025.\n\nThe bill is currently in the process of becoming a Public Law. It was signed into law on March 11, 2025, and became effective immediately.",
+            "5": "The context does not provide any information about hearings or the findings of any hearings on the bill, so I cannot answer this question from the provided context."
+        }
+    }
+]

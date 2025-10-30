@@ -1,0 +1,90 @@
+[
+    {
+        "bill_id": "hr1",
+        "bill_title": "One Big Beautiful Bill Act",
+        "sponsor_bioguide_id": "A000375",
+        "bill_committee_ids": [
+            "hsbu00"
+        ],
+        "article_content": "**Section 100055: Reimbursement for Costs Associated with Locating and Apprehending Certain Criminals**\n\nThis section provides over $1 billion in funding through FY2029 for the U.S. Secret Service for personnel, bonuses, training facilities, programming, and technology."
+    },
+    {
+        "bill_id": "hr5371",
+        "bill_title": "Continuing Appropriations and Extensions Act, 2026",
+        "sponsor_bioguide_id": "C001053",
+        "bill_committee_ids": [
+            "hsap00",
+            "hsbu00"
+        ],
+        "article_content": "## Continuing Appropriations and Extensions Act, 2026 Heads to House Floor\n\nThe Continuing Appropriations and Extensions Act, 2026, is currently undergoing consideration by the House [Budget Committee](https://api.congress.gov/v3/committee/house/hsbu00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd). The bill, currently awaiting a vote in the House, provides continuing FY2026 appropriations for federal agencies, extends security for federal officials, and extends various expiring programs and authorities.\n\nThe bill's sponsor is Rep. Cole, Tom (R-OK-4) (R), who recently faced a fourth cloture on the motion to proceed to H.R. 5371 in the Senate. While the cloture was not invoked, it highlights the ongoing debate surrounding the bill and its potential impact on federal funding and operations.\n\nFor the most up-to-date information on the bill's status and any relevant votes, please refer to official legislative sources or a reputable news source."
+    },
+    {
+        "bill_id": "hr5401",
+        "bill_title": "Pay Our Troops Act of 2026",
+        "sponsor_bioguide_id": "K000399",
+        "bill_committee_ids": [
+            "hsap00"
+        ],
+        "article_content": "## Paying Our Troops Act of 2026 Makes Progress Through [Appropriations Committee](https://api.congress.gov/v3/committee/house/hsap00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd)\n\nThe Pay Our Troops Act of 2026, a bipartisan bill aiming to address the ongoing backlog of veterans' claims, is currently being considered by the [Appropriations Committee](https://api.congress.gov/v3/committee/house/hsap00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd) in the House of Representatives. The bill, sponsored by Rep. Jennifer Kiggans (R-VA-2), aims to expedite the processing of pending military personnel's claims and improve support for veterans suffering from post-traumatic stress disorder (PTSD) and other combat-related illnesses.\n\nWhile specific details about the bill's content remain unclear from the context, it is expected to include measures such as streamlining the claims process, increasing the number of claims handlers, and prioritizing the needs of veterans seeking medical care. \n\nThe bill is currently being reviewed by the [Appropriations Committee](https://api.congress.gov/v3/committee/house/hsap00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd), and its fate remains uncertain. However, advocates for the bill highlight its potential to improve the lives of countless veterans and their families.\n\nFor the most up-to-date information on the Pay Our Troops Act of 2026 and legislative updates, please refer to official legislative sources such as the House of Representatives website or the Congressional Record."
+    },
+    {
+        "bill_id": "s2296",
+        "bill_title": "National Defense Authorization Act for Fiscal Year 2026",
+        "sponsor_bioguide_id": "W000437",
+        "bill_committee_ids": [
+            "ssas00"
+        ],
+        "article_content": "## Amendments to Arms Control Bill [S2296](https://www.congress.gov/bill/119th-congress/senate-bill/2296) Advance, But Controversies Remain\n\nTwo amendments related to the controversial Arms Control Bill [S2296](https://www.congress.gov/bill/119th-congress/senate-bill/2296) have been proposed in the Senate [Armed Services Committee](https://api.congress.gov/v3/committee/senate/ssas00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd). While both aim to address national security concerns, they have faced significant roadblocks due to the lack of support from key stakeholders.\n\n**Amendment 3926:** This amendment, proposed by Senator Risch, seeks to impose sanctions on individuals and entities associated with the People's Republic of China (PRC). It prohibits various transactions related to national security and prohibits notifications about investments in the PRC by US persons.\n\n**Amendment 3927:** Proposed by Senator Thune, this amendment aims to limit the use of Federal law enforcement officers for crowd control and other purposes. It also prohibits the use of Federal law enforcement officers in certain sensitive situations.\n\nDespite reaching the required quorum for a vote, neither amendment has yet seen the light of day. This is likely due to the lack of support from key cosponsors, including the Senate Majority and the White House.\n\nThe context also provides limited information on the recent actions related to the bill. Recent amendments by Senator Thune to recommit the bill to the Senate [Armed Services Committee](https://api.congress.gov/v3/committee/senate/ssas00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd) are still under review and have not yet reached a vote."
+    },
+    {
+        "bill_id": "s24",
+        "bill_title": "A bill to designate the facility of the United States Postal Service located at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\".",
+        "sponsor_bioguide_id": "C000880",
+        "bill_committee_ids": [
+            "ssga00"
+        ],
+        "article_content": "## A bill to designate the facility of the U.S. Postal Service located in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\"\n\nA bill to designate the facility of the U.S. Postal Service located at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\" has been introduced in the Senate and referred to the Committee on Homeland Security and Governmental Affairs.\n\nThe bill's sponsor, Senator Crapo, Mike [R-ID] (R), introduced the bill on [Date]. It is unclear at this time how many cosponsors there are on the committee, or who else is supporting the bill.\n\nThe context does not provide any information about amendments to the bill, its potential impact on postal service operations, or any other relevant details. For the most up-to-date information on the bill's status and any potential votes, please refer to official legislative sources or consult with a political analyst."
+    },
+    {
+        "bill_id": "s2882",
+        "bill_title": "Continuing Appropriations and Extensions and Other Matters Act, 2026",
+        "sponsor_bioguide_id": "M001111",
+        "bill_committee_ids": [],
+        "article_content": "# Continuing Appropriations and Extensions and Other Matters Act, 2026\n\nThe Continuing Appropriations and Extensions and Other Matters Act, 2026 is a proposed bill currently being considered by the House of Representatives. The bill provides continuing FY2026 appropriations for federal agencies.\n\nThe bill has been referred to the House for consideration and has been assigned to the House Committee on Appropriations. However, additional details about the bill's sponsors and cosponsors, hearings, and the findings of any hearings are not provided in the context."
+    },
+    {
+        "bill_id": "s499",
+        "bill_title": "Government Shutdown Prevention Act of 2025",
+        "sponsor_bioguide_id": "P000603",
+        "bill_committee_ids": [
+            "ssap00"
+        ],
+        "article_content": "# Government Shutdown Prevention Act of 2025\n\nThe Government Shutdown Prevention Act of 2025 aims to prevent a government shutdown by providing continuing appropriations to prevent a lapse in funding for essential government programs and projects.\n\nThe bill, currently in the Senate, was introduced by Senator Paul, Rand [R-KY] (R) and referred to the [Appropriations Committee](https://api.congress.gov/v3/committee/senate/ssap00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd). It provides continuing appropriations at 94% of the rate for the preceding year for the first 90 days of the fiscal year. However, after this initial 90-day period, the bill reduces the continuing appropriations by 1% and an additional 1% for each subsequent 90-day period until the applicable appropriations legislation is enacted.\n\nWhile the bill's specific details are not fully specified in the context, it is clear that its purpose is to prevent a government shutdown by ensuring that essential government services continue to operate smoothly."
+    },
+    {
+        "bill_id": "sres412",
+        "bill_title": "An executive resolution authorizing the en bloc consideration in Executive Session of certain nominations on the Executive Calendar.",
+        "sponsor_bioguide_id": "T000250",
+        "bill_committee_ids": [],
+        "article_content": "## En bloc consideration: Senator Thune proposes allowing nominations to be considered en bloc in Executive Session.\n\nA new executive resolution sponsored by Senator Thune (R-SD) has been introduced in the Senate. This resolution allows for the simultaneous consideration of multiple nominations submitted on the same day, bypassing the traditional process of individual hearings.\n\nWhile the context does not specify the specific content of the bill or its legislative intent, it does mention that it is related to nominations and the Executive Calendar. Additionally, the amendment related to the bill indicates that it is intended to update an existing law.\n\nThe bill has been referred to the Commerce, Education, Justice, and Science (CEJ) Committee for consideration. However, no information is provided about who cosponsored the bill or the current status of its progress through the legislative process."
+    },
+    {
+        "bill_id": "hres353",
+        "bill_title": "Impeaching Donald John Trump, President of the United States, for high crimes and misdemeanors.",
+        "sponsor_bioguide_id": "T000488",
+        "bill_committee_ids": [
+            "hsju00"
+        ],
+        "article_content": "## Impeachment Bill [HRES353](https://www.congress.gov/bill/119th-congress/house-resolution/353) Heads to House Judiciary\n\nA proposed bill, [HRES353](https://www.congress.gov/bill/119th-congress/house-resolution/353), seeking President Donald Trump's impeachment on charges of obstruction of justice, violation of due process, and a breach of the duty to faithfully execute laws, has reached the House [Judiciary Committee](https://api.congress.gov/v3/committee/house/hsju00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd) for consideration.\n\nThe bill, which currently sits on the House floor, has the support of Rep. Mfume, Kweisi, Nadler, Jerrold, Kelly, Schakowsky, and Green. It remains unclear whether the House will proceed with the impeachment at this stage.\n\nThe context does not specify which committee is handling the bill, leaving the question unanswered. Additionally, the bill does not specify any amendments or proposed changes to its content, making it difficult to assess its current form and legislative intent."
+    },
+    {
+        "bill_id": "hr1968",
+        "bill_title": "Full-Year Continuing Appropriations and Extensions Act, 2025",
+        "sponsor_bioguide_id": "C001053",
+        "bill_committee_ids": [
+            "hsap00",
+            "hsbu00"
+        ],
+        "article_content": "## Full-Year Continuing Appropriations and Extensions Act Signed into Law\n\nA full-year continuing appropriations bill, [HR1968](https://www.congress.gov/bill/119th-congress/house-bill/1968), has been signed into law, providing continued funding for federal agencies and extending various expiring programs and authorities. The bill, which was originally set to expire on March 14, 2025, will now remain in effect until a new CR is enacted.\n\nThe bill currently finds itself in the [Budget Committee](https://api.congress.gov/v3/committee/house/hsbu00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd), but the specific committees involved in its passage are not specified in the context. Additionally, no information is provided about the bill's sponsors or cosponsors on the [Budget Committee](https://api.congress.gov/v3/committee/house/hsbu00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd).\n\nThe bill does propose two amendments: Amendment 1288, which increases funding for the Temporary Assistance for Needy Families (TANF) program by $1.2 billion, and Amendment 119, which increases funding for the National Flood Insurance Program by $1.5 billion."
+    }
+]
