@@ -1,4 +1,5 @@
 # RAG News Pipeline
+Made by Jing Peng
 
 Retrieval-augmented workflow that turns Congress.gov data into Markdown briefs using Kafka, Redis, Chroma, and Ollama—all packaged in Docker Compose.
 
