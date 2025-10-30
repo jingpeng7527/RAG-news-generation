@@ -21,7 +21,6 @@ env/
 .pytest_cache/
 
 # Generated artefacts
-output/
 vector_store/
 
 .DS_Store
