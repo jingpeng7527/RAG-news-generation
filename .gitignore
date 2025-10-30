@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# IDE / Editor specific
+.idea/
+.vscode/
+.history/
+
+# Pytest cache
+.pytest_cache/
+
+# Generated artefacts
+output/
+vector_store/
+
+.DS_Store

@@ -1,0 +1,6 @@
+kafka-python
+requests
+python-dotenv
+pytest
+redis
+chromadb
