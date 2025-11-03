@@ -128,7 +128,7 @@ QUESTIONS = {
 
 # --- Worker configuration --------------------------------------------------
 
-NUM_QUERY_WORKERS = int(os.getenv("NUM_QUERY_WORKERS", "4"))
+NUM_QUERY_WORKERS = int(os.getenv("NUM_QUERY_WORKERS", "2"))
 NUM_ARTICLE_WORKERS = int(os.getenv("NUM_ARTICLE_WORKERS", "2"))
 
 
@@ -137,10 +137,10 @@ NUM_ARTICLE_WORKERS = int(os.getenv("NUM_ARTICLE_WORKERS", "2"))
 LLM_HOST = os.getenv("LLM_HOST", "127.0.0.1")
 LLM_PORT = os.getenv("LLM_PORT", "11434")
 LLM_API_BASE = f"http://{LLM_HOST}:{LLM_PORT}/api"
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:8b")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
-LLM_REQUEST_TIMEOUT = int(os.getenv("LLM_REQUEST_TIMEOUT", "120"))
-LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "2"))
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:4b")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "embeddinggemma:latest")
+LLM_REQUEST_TIMEOUT = int(os.getenv("LLM_REQUEST_TIMEOUT", "240"))
+LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "4"))
 LLM_RETRY_BACKOFF_SECONDS = float(os.getenv("LLM_RETRY_BACKOFF_SECONDS", "2.0"))
 
 

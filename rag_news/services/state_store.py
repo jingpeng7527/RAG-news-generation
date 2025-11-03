@@ -49,6 +49,9 @@ class RedisStateStore:
         self._redis.sadd(self._bill_status_key(bill_id), question_id)
         self._redis.hset(self._bill_answers_key(bill_id), question_id, answer)
 
+    def has_answer(self, bill_id: str, question_id: int) -> bool:
+        return self._redis.hexists(self._bill_answers_key(bill_id), question_id)
+
     def fetch_answers(self, bill_id: str) -> Dict[int, str]:
         data = self._redis.hgetall(self._bill_answers_key(bill_id))
         return {int(k): v for k, v in data.items()}
@@ -68,21 +71,28 @@ class RedisStateStore:
 
     def append_answer_bundle(self, bill_id: str, answers: Dict[int, str]) -> None:
         bundle = {"bill_id": bill_id, "answers": answers}
-        self._append_json_line(config.OUTPUT_ANSWERS_FILE, bundle)
+        self._upsert_json_record(config.OUTPUT_ANSWERS_FILE, "bill_id", bundle)
 
     def append_article_bundle(self, payload: dict) -> None:
-            self._append_json_line(config.OUTPUT_ARTICLES_FILE, payload)
+        self._upsert_json_record(config.OUTPUT_ARTICLES_FILE, "bill_id", payload)
 
     @staticmethod
-    def _append_json_line(path, payload: dict) -> None:
+    def _upsert_json_record(path, key_field: str, payload: dict) -> None:
         try:
             with path.open("r", encoding="utf-8") as fh:
-                data = json.load(fh)
-        except FileNotFoundError:
-            data = []
-        except json.JSONDecodeError:
-            data = []
+                records = json.load(fh)
+        except (FileNotFoundError, json.JSONDecodeError):
+            records = []
 
-        data.append(payload)
+        updated = False
+        for idx, existing in enumerate(records):
+            if isinstance(existing, dict) and existing.get(key_field) == payload.get(key_field):
+                records[idx] = payload
+                updated = True
+                break
+
+        if not updated:
+            records.append(payload)
+
         with path.open("w", encoding="utf-8") as fh:
-            json.dump(data, fh, indent=4)
+            json.dump(records, fh, indent=4)

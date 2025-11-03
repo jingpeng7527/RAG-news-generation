@@ -33,6 +33,7 @@ class QuestionWorker(threading.Thread):
         self.api = CongressAPI()
         self.llm = LLMClient()
         self.state = RedisStateStore()
+        self._indexed_bills: set[str] = set()
 
     def run(self) -> None:  # pragma: no cover - infinite loop
         print("[question] worker ready")
@@ -44,7 +45,16 @@ class QuestionWorker(threading.Thread):
             question_id = payload["question_id"]
             question = config.QUESTIONS.get(question_id, "")
 
+            if self.state.has_answer(bill_id, question_id):
+                print(f"[question] skipping {bill_id.upper()} q{question_id} (already answered)")
+                continue
+
             try:
+                if bill_id not in self._indexed_bills:
+                    print(f"[question] indexing context for {bill_id.upper()}")
+                    self.api.fetch_bill_bundle(bill_id, bill_type, congress)
+                    self._indexed_bills.add(bill_id)
+
                 print(f"[question] bill {bill_id.upper()} q{question_id} queued")
                 context = self.api.query_context(bill_id, question)
                 answer = self.llm.answer_question(question, context)
@@ -64,6 +74,8 @@ class QuestionWorker(threading.Thread):
                             "congress": congress,
                         },
                     )
+            except Exception as exc:  # pragma: no cover - defensive guard
+                print(f"[question] error answering {bill_id.upper()} q{question_id}: {exc}")
             except Exception as exc:  # pragma: no cover - defensive guard for worker loop
                 traceback_str = traceback.format_exc(limit=8)
                 error_payload = {
