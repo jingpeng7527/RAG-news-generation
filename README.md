@@ -1,23 +1,29 @@
 # RAG News Pipeline
 Made by Jing Peng
 
-Retrieval-augmented workflow that turns Congress.gov data into Markdown briefs using Kafka, Redis, Chroma, and Ollama—all packaged in Docker Compose.
+Retrieval-augmented workflow that turns Congress.gov data into Markdown briefs using Kafka, Redis, Chroma, and LM Studio—all packaged in Docker Compose.
 
 ## i. Setup Instructions
 
 1. Install prerequisites:
 ```bash
-ollama pull gemma:2b
-ollama pull nomic-embed-text
-ollama serve --address 0.0.0.0
+# Install and run LM Studio
+# Download from https://lmstudio.ai/
+# Start LM Studio and load a model (e.g., Qwen3-4B-Thinking)
+# Ensure LM Studio server is running on http://127.0.0.1:1234
 pip install -r requirements.txt
 ```
 
 2. Add a `.env` file (not committed):
 ```bash
 CONGRESS_API_KEY=your_api_key
-LLM_HOST=host.docker.internal
-LLM_PORT=11434
+LLM_PROVIDER=lmstudio
+# For local development (outside Docker):
+LMSTUDIO_BASE_URL=http://127.0.0.1:1234
+# For Docker Compose (use this):
+# LMSTUDIO_BASE_URL=http://host.docker.internal:1234
+LLM_MODEL=qwen/qwen3-4b-thinking-2507
+EMBEDDING_MODEL=text-embedding-embeddinggemma-300m
 REDIS_URL=redis://redis:6379/0
 ```
 
@@ -27,7 +33,7 @@ The pipeline uses a distributed architecture with three worker types orchestrate
 
 **Data Flow:**
 1. **QuestionWorker** processes individual questions about bills using Congress.gov API data and vector search
-2. **ArticleWorker** synthesizes answers into coherent news articles using Ollama LLM
+2. **ArticleWorker** synthesizes answers into coherent news articles using LM Studio LLM
 3. **LinkCheckWorker** validates all hyperlinks and writes final JSON output
 
 **Key Components:**
@@ -39,7 +45,7 @@ The pipeline uses a distributed architecture with three worker types orchestrate
 - **Services** (`rag_news/services/`):
   - `congress_api.py` – Congress.gov API client with caching
   - `vector_store.py` – Chroma vector database for semantic search
-  - `llm_client.py` – Ollama integration for text generation
+  - `llm_client.py` – LM Studio integration for text generation
   - `redis_client.py` – Caching and state management
   - `kafka_utils.py` – Message queue administration
 
@@ -47,7 +53,7 @@ The pipeline uses a distributed architecture with three worker types orchestrate
   - **Kafka** – Message orchestration between workers
   - **Redis** – High-speed caching and state persistence
   - **Chroma** – Vector database for semantic search
-  - **Ollama** – Local LLM serving
+  - **LM Studio** – Local LLM serving
 
 ## iii. How to Run the Pipeline
 

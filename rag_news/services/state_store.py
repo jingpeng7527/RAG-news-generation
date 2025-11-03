@@ -61,10 +61,16 @@ class RedisStateStore:
         return answered >= len(config.QUESTIONS)
 
     def reset_bill(self, bill_id: str) -> None:
+        """Clear all Redis keys for a bill to allow reprocessing."""
+        deleted = 0
         for q_id in config.QUESTIONS.keys():
-            self._redis.delete(self._question_key(bill_id, q_id))
-        self._redis.delete(self._bill_answers_key(bill_id))
-        self._redis.delete(self._bill_status_key(bill_id))
+            if self._redis.delete(self._question_key(bill_id, q_id)):
+                deleted += 1
+        if self._redis.delete(self._bill_answers_key(bill_id)):
+            deleted += 1
+        if self._redis.delete(self._bill_status_key(bill_id)):
+            deleted += 1
+        return deleted > 0
 
     # ------------------------------------------------------------------
     # Output helpers

@@ -88,7 +88,7 @@ CACHE_TTL_SECONDS = int(os.getenv("CACHE_TTL_SECONDS", "86400"))  # 24 hours
 # --- Vector Store ----------------------------------------------------------
 
 VECTOR_STORE_PATH = Path(os.getenv("VECTOR_STORE_PATH", "./vector_store")).resolve()
-VECTOR_TOP_K = int(os.getenv("VECTOR_TOP_K", "3"))
+VECTOR_TOP_K = int(os.getenv("VECTOR_TOP_K", "10"))  # Increased from 3 to 10 for better context retrieval
 
 # --- Output artefacts ------------------------------------------------------
 
@@ -134,14 +134,28 @@ NUM_ARTICLE_WORKERS = int(os.getenv("NUM_ARTICLE_WORKERS", "2"))
 
 # --- LLM Configuration -----------------------------------------------------
 
-LLM_HOST = os.getenv("LLM_HOST", "127.0.0.1")
-LLM_PORT = os.getenv("LLM_PORT", "11434")
-LLM_API_BASE = f"http://{LLM_HOST}:{LLM_PORT}/api"
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:4b")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "embeddinggemma:latest")
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "lmstudio").strip().lower()
 LLM_REQUEST_TIMEOUT = int(os.getenv("LLM_REQUEST_TIMEOUT", "240"))
 LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "4"))
 LLM_RETRY_BACKOFF_SECONDS = float(os.getenv("LLM_RETRY_BACKOFF_SECONDS", "2.0"))
+
+if LLM_PROVIDER == "lmstudio":
+    LMSTUDIO_BASE_URL = os.getenv("LMSTUDIO_BASE_URL", "http://127.0.0.1:1234").rstrip("/")
+    # LM Studio uses OpenAI-compatible API with /v1 prefix
+    if not LMSTUDIO_BASE_URL.endswith("/v1"):
+        LLM_API_BASE = f"{LMSTUDIO_BASE_URL}/v1"
+    else:
+        LLM_API_BASE = LMSTUDIO_BASE_URL
+    LLM_MODEL = os.getenv("LLM_MODEL", "qwen/qwen3-4b-2507")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-embeddinggemma-300m")
+elif LLM_PROVIDER == "ollama":
+    LLM_HOST = os.getenv("LLM_HOST", "127.0.0.1")
+    LLM_PORT = os.getenv("LLM_PORT", "11434")
+    LLM_API_BASE = os.getenv("LLM_API_BASE", f"http://{LLM_HOST}:{LLM_PORT}/api").rstrip("/")
+    LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:4b")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "embeddinggemma:latest")
+else:
+    raise ValueError(f"Unsupported LLM_PROVIDER: {LLM_PROVIDER!r}")
 
 
 def build_topic_config() -> dict[str, Any]:

@@ -33,7 +33,6 @@ class QuestionWorker(threading.Thread):
         self.api = CongressAPI()
         self.llm = LLMClient()
         self.state = RedisStateStore()
-        self._indexed_bills: set[str] = set()
 
     def run(self) -> None:  # pragma: no cover - infinite loop
         print("[question] worker ready")
@@ -50,13 +49,19 @@ class QuestionWorker(threading.Thread):
                 continue
 
             try:
-                if bill_id not in self._indexed_bills:
-                    print(f"[question] indexing context for {bill_id.upper()}")
-                    self.api.fetch_bill_bundle(bill_id, bill_type, congress)
-                    self._indexed_bills.add(bill_id)
-
                 print(f"[question] bill {bill_id.upper()} q{question_id} queued")
+                # Ensure bill bundle is fetched and indexed before querying
+                self.api.fetch_bill_bundle(bill_id, bill_type, congress)
+                # Query vector store for relevant context
                 context = self.api.query_context(bill_id, question)
+                # Model has 2048 token limit, so limit additional chunks
+                # Only supplement if vector store returned very few results
+                if len(context) < 2:
+                    bundle = self.api.fetch_bill_bundle(bill_id, bill_type, congress)
+                    from ..services.vector_store import build_context_chunks
+                    all_chunks = build_context_chunks(bundle)
+                    # Add only 3-4 more chunks to stay within token limits
+                    context = list(context) + all_chunks[:4]
                 answer = self.llm.answer_question(question, context)
                 print(f"[question] bill {bill_id.upper()} q{question_id} answered")
 
@@ -74,8 +79,6 @@ class QuestionWorker(threading.Thread):
                             "congress": congress,
                         },
                     )
-            except Exception as exc:  # pragma: no cover - defensive guard
-                print(f"[question] error answering {bill_id.upper()} q{question_id}: {exc}")
             except Exception as exc:  # pragma: no cover - defensive guard for worker loop
                 traceback_str = traceback.format_exc(limit=8)
                 error_payload = {
@@ -87,6 +90,6 @@ class QuestionWorker(threading.Thread):
                     "error": str(exc),
                     "traceback": traceback_str,
                 }
-                print(f"[question] error answering q{question_id} for {bill_id.upper()}: {exc}")
+                print(f"[question] error answering {bill_id.upper()} q{question_id}: {exc}")
                 self.producer.send(config.KAFKA_TOPICS["error"], error_payload)
                 continue

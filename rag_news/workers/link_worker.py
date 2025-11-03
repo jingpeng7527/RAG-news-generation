@@ -39,8 +39,10 @@ class LinkCheckWorker(threading.Thread):
             bill_payload = payload["bill_payload"]
             bill_id = payload["bill_id"]
 
-            print(f"[link] validating links for {bill_id.upper()}")
-            _ = self._validate_links(article_text)
+            # Validate links (results logged but not blocking)
+            invalid_links = self._validate_links(article_text)
+            if invalid_links:
+                print(f"[link] warning: {len(invalid_links)} invalid link(s) found for {bill_id.upper()}")
 
             bill = bill_payload.get("bill", {}) if isinstance(bill_payload, dict) else {}
             output_record = {

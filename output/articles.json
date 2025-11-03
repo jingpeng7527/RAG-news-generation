@@ -1,1 +1,81 @@
-[]
+[
+    {
+        "bill_id": "hr5371",
+        "bill_title": "Continuing Appropriations and Extensions Act, 2026",
+        "sponsor_bioguide_id": "C001053",
+        "bill_committee_ids": [
+            "hsap00",
+            "hsbu00"
+        ],
+        "article_content": "**Continuing Appropriations Funding for 2026**\n\nThe Continuing Appropriations Act, 2026 (H.R. 5371) provides ongoing funding for federal agencies and programs for the 2026 fiscal year, preventing a potential government shutdown. The legislation authorizes appropriations for most federal departments and agencies at FY2025 levels, with some exceptions that provide funding flexibility. It includes additional funding for the security of Members of Congress, Supreme Court Justices, and executive branch officials, and extends expiring authorities in public health, veterans\u2019 services, cybersecurity, and the Defense Production Act.\n\nThe bill was referred to the House [Appropriations Committee](https://api.congress.gov/v3/committee/house/hsap00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd) and the [Budget Committee](https://api.congress.gov/v3/committee/house/hsbu00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd) for review. Rep. Tom Cole (R-OK-4) is the sponsor; no cosponsors are listed in the provided information. A motion to proceed to consideration was made in the Senate, with a subsequent vote on the fourth cloture motion resulting in a 54\u201345 ye-a-nay vote. A motion to reconsider that vote was agreed to by voice vote, and a motion to proceed to consideration of the reconsideration was also approved by voice vote. No amendments have been proposed, and no hearings have been reported on the bill. The primary constitutional authority cited is clause 7 of section 9 of Article I, which grants Congress the power to appropriate funds."
+    },
+    {
+        "bill_id": "hr5401",
+        "bill_title": "Pay Our Troops Act of 2026",
+        "sponsor_bioguide_id": "K000399",
+        "bill_committee_ids": [
+            "hsap00"
+        ],
+        "article_content": "**Pay Our Troops Act Provides Military Pay During Shutdowns**\n\nH.R. 5401, the Pay Our Troops Act of 2026, was introduced in the U.S. House of Representatives on September 16, 2025, and referred to the House Committee on Appropriations. The bill aims to provide continuing appropriations for the pay and allowances of active-duty military personnel, including reserve components, and civilian personnel and contractors supporting them during a government shutdown. It ensures compensation continues until the earlier of the enactment of specified appropriations legislation or January 1, 2027.\n\nThe legislation is sponsored by Rep. Jennifer A. Kiggans (R-VA-2) and cosponsored by 24 members, including Rep. Brian K. Fitzpatrick (R-PA-1), who serves on the House Committee on Appropriations. The bill also includes representatives from across the political spectrum, such as Rep. Marie Gluesenkamp Perez (D-WA-3) and Rep. Chris Pappas (D-NH-1), indicating bipartisan support in its introduction.\n\nAs of the latest available information, no hearings, amendments, or votes have occurred on the bill. The legislation is in the early stages of review within the House Committee on Appropriations, with no public record of procedural actions beyond its referral. The bill is authorized under Article I, Section 8 of the U.S. Constitution, which grants Congress the power to regulate appropriations. A related bill, S3060, is also under consideration in the Senate."
+    },
+    {
+        "bill_id": "s2296",
+        "bill_title": "National Defense Authorization Act for Fiscal Year 2026",
+        "sponsor_bioguide_id": "W000437",
+        "bill_committee_ids": [
+            "ssas00"
+        ],
+        "article_content": "**Senate Passes Military Construction Bill for FY2026**\n\nThe Senate passed the Military Construction Authorization Act for Fiscal Year 2026 on October 9, 2025, by a vote of 77\u201320, meeting the 60-vote threshold required for passage under Senate rules. The bill, sponsored by Sen. Roger Wicker of Mississippi, is currently under consideration in the Senate [Armed Services Committee](https://api.congress.gov/v3/committee/senate/ssas00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd). It authorizes funding for military construction activities and related programs, including specific projects and personnel strength levels for active and reserve components.\n\nThe legislation, formally titled the National Defense Authorization Act for Fiscal Year 2026, also authorizes procurement of aircraft, ships, and missiles, extends the Pacific Deterrence Initiative through FY2026, and requires the Department of Defense to develop a strategy on the national security implications of emerging biotechnologies. It further mandates the Navy to improve the material condition and combat readiness of surface ships maintained at private shipyards.\n\nAmendments to the bill were proposed during the legislative process. Amendment 3928, introduced by the Senate [Armed Services Committee](https://api.congress.gov/v3/committee/senate/ssas00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd), requires the Secretary of Defense to establish a pilot program for deploying microreactors and was agreed to by voice vote on October 9, 2025. Amendments 3925 and 3929 were also introduced during the 119th Congress, with updates in October 2025. Amendment 3926, which would impose sanctions on certain Chinese entities and restrict U.S. investments in China, passed by yea-nay vote, while Amendment 3927, aimed at limiting federal law enforcement use for crowd control, did not achieve 60 votes and was not adopted.\n\nThe vote reflects broad bipartisan support, with 77 senators in favor and 20 opposed. The bill does not provide direct budget authority, which is allocated through separate appropriations legislation. It also repeals certain DOD diversity, equity, and inclusion provisions, including the position of Chief Diversity Officer."
+    },
+    {
+        "bill_id": "s24",
+        "bill_title": "A bill to designate the facility of the United States Postal Service located at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office\".",
+        "sponsor_bioguide_id": "C000880",
+        "bill_committee_ids": [
+            "ssga00"
+        ],
+        "article_content": "**Senate bill designates Idaho post office in honor of Maxine Bell**\n\nSenate Bill S.24, introduced on January 7, 2025, designates the U.S. Postal Service facility at 154 First Avenue East in Jerome, Idaho, as the \"Representative Maxine Bell Post Office.\" The bill was sponsored by Senator Mike Crapo (R-ID) and cosponsored by Senator James E. Risch (R-ID), who is a member of the Senate Committee on Homeland Security and Governmental Affairs. The legislation has been read twice and referred to that committee, marking its initial legislative action.\n\nNo hearings have been held on the bill, and no committee findings or public commentary have been issued. As of now, no amendments have been proposed, and no votes have taken place. The bill remains in the early stages of the legislative process with no indication of further action or public debate."
+    },
+    {
+        "bill_id": "s2882",
+        "bill_title": "Continuing Appropriations and Extensions and Other Matters Act, 2026",
+        "sponsor_bioguide_id": "M001111",
+        "bill_committee_ids": [],
+        "article_content": "**Continuing Funding Averts Government Shutdown**\n\nSenate Bill 2882, the Continuing Appropriations and Extensions and Other Matters Act, 2026, provides continuing appropriations for federal agencies through October 31, 2025, or the enactment of the applicable appropriations act, preventing a government shutdown. The measure funds most programs at FY2025 levels with exceptions, including additional funding for the Corporation for Public Broadcasting and security for federal officials.\n\nThe bill permanently extends the expanded premium tax credit for health insurance purchases and repeals certain provisions from the One Big Beautiful Bill Act, including those that reduced Medicaid funding. It authorizes the District of Columbia to spend local funds at FY2026 budget rates, extends funds withheld by the Office of Management and Budget (OMB), and limits OMB\u2019s authority to withhold appropriations.\n\nThe legislation also extends several expiring programs and authorities in health care, veterans, homeland security, and agriculture. The bill was introduced in the Senate by Senator Patty Murray of Washington and has no cosponsors listed. No amendments have been proposed, and no hearings have been reported.\n\nMultiple votes on the bill occurred, including a second cloture motion not invoked by a yea-nay vote (47\u201352) and a third cloture motion not invoked (47\u201350). A motion to reconsider the second cloture vote was agreed to by voice vote, and a subsequent motion by Senator Schumer to reconsider a third cloture vote was entered in the Senate on October 9, 2025. Vote counts indicate bipartisan participation, with support from senators across party lines."
+    },
+    {
+        "bill_id": "s499",
+        "bill_title": "Government Shutdown Prevention Act of 2025",
+        "sponsor_bioguide_id": "P000603",
+        "bill_committee_ids": [
+            "ssap00"
+        ],
+        "article_content": "**Government Shutdown Prevention Act of 2025 offers 90-day funding buffer**\n\nSenate Bill S.499, the Government Shutdown Prevention Act of 2025, was introduced on February 10, 2025, by Senator Rand Paul of Kentucky. The bill provides automatic continuing appropriations at 94% of the previous fiscal year's funding level for an initial 90-day period to prevent a government shutdown if appropriations legislation has not been enacted before the fiscal year begins. \n\nAfter the initial 90-day period, funding is reduced by 1% every subsequent 90-day period until regular appropriations legislation is passed. The bill has been read twice and referred to the Senate Committee on Appropriations. No hearings have been held, and no amendments have been proposed. \n\nSenator Paul is the sole sponsor; no cosponsors are listed. The bill does not include any provisions for party-line or bipartisan voting, as no votes have occurred. As of the latest information, the bill remains in the committee stage with no further action reported."
+    },
+    {
+        "bill_id": "sres412",
+        "bill_title": "An executive resolution authorizing the en bloc consideration in Executive Session of certain nominations on the Executive Calendar.",
+        "sponsor_bioguide_id": "T000250",
+        "bill_committee_ids": [],
+        "article_content": "**Senate Approves Rule Change for Executive Nominations**\n\nSenate Resolution 412, introduced by Sen. John Thune (R-SD), authorizes the en bloc consideration in executive session of certain executive branch nominations on the Senate calendar. The resolution was considered by the Senate and passed by a yea-nay vote of 51 to 46, indicating bipartisan support. No cosponsors are listed, and no committee review or hearings were conducted. The bill was advanced by unanimous consent on October 3, 2025. \n\nTwo amendments to the resolution, designated as SAMDT (Senate Amendment to a Democratic or other type), were filed in the 119th Congress\u2014Amendment 3918 and 3919. However, the specific authors or provisions of these amendments are not detailed in the available context. The resolution was approved without amendment, suggesting no substantive changes were adopted during the debate. \n\nThe text of the bill and its amendments are available in JSON format through the official Congress.gov API. The legislation addresses procedural matters in the Senate, specifically governing the handling of executive nominations. No committee assignments or cosponsorship details are recorded."
+    },
+    {
+        "bill_id": "hres353",
+        "bill_title": "Impeaching Donald John Trump, President of the United States, for high crimes and misdemeanors.",
+        "sponsor_bioguide_id": "T000488",
+        "bill_committee_ids": [
+            "hsju00"
+        ],
+        "article_content": "**House Passes Impeachment Resolution Against Trump**\n\nA resolution introducing impeachment of President Donald Trump for high crimes and misdemeanors has been referred to the House Committee on the Judiciary. The resolution, introduced by Rep. Shri Thanedar of Michigan, was cosponsored by Rep. Kweisi Mfume of Maryland, Rep. Jerrold Nadler of New York, Rep. Robin L. Kelly of Illinois, Rep. Janice D. Schakowsky of Illinois, and Rep. Al Green of Texas. The resolution outlines seven articles of impeachment, including allegations of obstruction of justice, abuse of trade powers, violation of First Amendment rights, and creating an unlawful office.\n\nThe bill was submitted in the House and referred to the [Judiciary Committee](https://api.congress.gov/v3/committee/house/hsju00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd), with no hearings or official findings reported. As of the latest update, no amendments have been proposed, and no votes have occurred on the resolution. The sponsor delivered introductory remarks on the measure, and the committee has not yet taken action on the resolution."
+    },
+    {
+        "bill_id": "hr1968",
+        "bill_title": "Full-Year Continuing Appropriations and Extensions Act, 2025",
+        "sponsor_bioguide_id": "C001053",
+        "bill_committee_ids": [
+            "hsap00",
+            "hsbu00"
+        ],
+        "article_content": "**Full-Year Funding Avoids Government Shutdown**\n\nThe Full-Year Continuing Appropriations and Extensions Act, 2025 (H.R. 1968) provides full-year funding to federal agencies at FY2024 levels, preventing a potential government shutdown as the current continuing resolution expires on March 14, 2025. The bill extends expiring authorities in public health, immigration, cybersecurity, and other key areas, including the National Flood Insurance Program and the Drug Enforcement Administration\u2019s fentanyl scheduling order.\n\nIntroduced in the 119th Congress, the bill was sponsored by Rep. Tom Cole (R-OK-4) and referred to both the House Appropriations and [Budget Committee](https://api.congress.gov/v3/committee/house/hsbu00?format=json&api_key=SNIivcArmVb2FeWLaN6sHFBiE3J5HD2jLq569Wdd)s. No cosponsors are listed in the official record. An amendment (HAMDT No. 8) proposed by Rep. Cole was adopted without objection on March 11, 2025, pursuant to H. Res. 211. Several SAMDT amendments (Nos. 1284\u20131288) were also introduced during the legislative process, though specific details of their provisions are not provided.\n\nThe legislation became Public Law No. 119-4 after being passed by the House and signed by the President. There is no public record of committee hearings being held on the bill. The nature of the vote, including whether it was bipartisan or party-line, cannot be determined from available information. The bill's provisions maintain most federal programs at 2024 levels while extending critical authorities across multiple agencies."
+    }
+]

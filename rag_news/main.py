@@ -20,11 +20,19 @@ def main() -> None:
     _prepare_output_files()
     kafka_utils.ensure_topics()
 
+    # Clear Redis state for all bills before starting
     state = RedisStateStore()
+    print("[boot] clearing previous answers from Redis...")
     for bill in config.TARGET_BILLS:
         state.reset_bill(bill["id"])
+        print(f"[boot] reset {bill['id'].upper()}")
+    
+    # Small delay to ensure reset completes before workers start consuming
+    time.sleep(0.5)
 
     workers = _spawn_workers()
+    # Small delay to let workers initialize
+    time.sleep(0.5)
     _dispatch_initial_tasks()
 
     _wait_for_completion()
@@ -37,7 +45,7 @@ def main() -> None:
     print(f"Total application processing time: {total_time:.2f} seconds.")
     print(f"  - Time spent on Congress.gov API calls: {metrics.congress_api_time:.2f} seconds.")
     print(f"  - Time spent on LLM API calls: {metrics.llm_api_time:.2f} seconds.")
-    print(f"Output written to {config.OUTPUT_FILE}")
+    print(f"Output written to {config.OUTPUT_ARTICLES_FILE} and {config.OUTPUT_ANSWERS_FILE}")
 
 def _prepare_output_files() -> None:
     for path in (config.OUTPUT_ARTICLES_FILE, config.OUTPUT_ANSWERS_FILE):

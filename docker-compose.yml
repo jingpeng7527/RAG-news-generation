@@ -45,8 +45,8 @@ services:
       - ./vector_store:/app/vector_store
     environment:
       KAFKA_BOOTSTRAP_SERVERS: "kafka:29092"
-      LLM_HOST: "host.docker.internal"
-      LLM_PORT: "11434"
+      LLM_PROVIDER: "lmstudio"
+      LMSTUDIO_BASE_URL: "http://host.docker.internal:1234"
       REDIS_URL: "redis://redis:6379/0"
     env_file:
       - .env
