@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from typing import Iterable, List
+from typing import Any, Iterable, List
 from uuid import uuid4
 
 from .. import config
@@ -97,23 +97,28 @@ def build_context_chunks(bill_payload: dict) -> List[str]:
 
     bill = bill_payload.get("bill", {})
     chunks: List[str] = []
+    processed_keys: set[str] = set()
 
     title = bill.get("title")
     if title:
         chunks.append(f"Title: {title}")
+        processed_keys.add("title")
 
     summary_items = _extract_items(bill.get("summaries"))
     for item in summary_items:
         text = item.get("text")
         if text:
             chunks.append(f"Summary: {text}")
-
+    if summary_items:
+        processed_keys.add("summaries")
 
     committee_items = _extract_items(bill.get("committees"), default_key="committees")
     for committee in committee_items:
         name = committee.get("name") or committee.get("committeeName")
         if name:
             chunks.append(f"Committee: {name}")
+    if committee_items:
+        processed_keys.add("committees")
 
     sponsors = bill.get("sponsors", [])
     for sponsor in sponsors:
@@ -122,15 +127,20 @@ def build_context_chunks(bill_payload: dict) -> List[str]:
         if full:
             party = f" ({role})" if role else ""
             chunks.append(f"Sponsor: {full}{party}")
+    if sponsors:
+        processed_keys.add("sponsors")
 
     cosponsors = _extract_items(bill.get("cosponsors"))
     cosponsor_names = [item.get("fullName") for item in cosponsors if item.get("fullName")]
     if cosponsor_names:
         chunks.append("Cosponsors: " + ", ".join(cosponsor_names[:20]))
+        processed_keys.add("cosponsors")
 
     amendments = _extract_items(bill.get("amendments"))
     for amendment in amendments[:5]:
         chunks.append("Amendment: " + json.dumps(amendment, ensure_ascii=False))
+    if amendments:
+        processed_keys.add("amendments")
 
     actions = bill.get("actions")
     action_items = _extract_items(actions)
@@ -138,9 +148,75 @@ def build_context_chunks(bill_payload: dict) -> List[str]:
         desc = action.get("text")
         if desc:
             chunks.append("Recent action: " + desc)
+    if action_items:
+        processed_keys.add("actions")
+
+    titles = _extract_items(bill.get("titles"), default_key="titles")
+    for title_variant in titles[:5]:
+        value = title_variant.get("title") or title_variant.get("name")
+        variant_type = title_variant.get("type") or title_variant.get("titleType")
+        if value:
+            qualifier = f" ({variant_type})" if variant_type else ""
+            chunks.append(f"Alternate title{qualifier}: {value}")
+    if titles:
+        processed_keys.add("titles")
+
+    policy_area = bill.get("policy-area") or bill.get("policyArea")
+    if isinstance(policy_area, dict):
+        name = policy_area.get("name") or policy_area.get("policyArea")
+        if name:
+            chunks.append(f"Policy area: {name}")
+    if policy_area:
+        processed_keys.update({"policy-area", "policyArea"})
+
+    subjects = _extract_items(bill.get("subjects"), default_key="subjects")
+    subject_terms = [
+        item.get("name") or item.get("subject") for item in subjects if item.get("name") or item.get("subject")
+    ]
+    if subject_terms:
+        chunks.append("Key subjects: " + ", ".join(subject_terms[:20]))
+        processed_keys.add("subjects")
+
+    related_bills = _extract_items(bill.get("relatedbills"), default_key="relatedBills")
+    for related in related_bills[:5]:
+        identifier = related.get("type") or related.get("billType")
+        number = related.get("number") or related.get("billNumber")
+        relationship = related.get("relationship")
+        pieces = []
+        if identifier and number:
+            pieces.append(f"{identifier.upper()}{number}")
+        if relationship:
+            pieces.append(relationship)
+        if pieces:
+            chunks.append("Related bill: " + " - ".join(pieces))
+    if related_bills:
+        processed_keys.update({"relatedbills", "relatedBills"})
+
+    bill_text = bill.get("text") or bill.get("texts")
+    text_items = _extract_items(bill_text, default_key="textVersions")
+    for text_item in text_items[:2]:
+        title_hint = text_item.get("title") or text_item.get("type") or text_item.get("versionCode")
+        description = text_item.get("description")
+        if description:
+            snippet = description.strip()
+            if len(snippet) > 500:
+                snippet = snippet[:497].rstrip() + "..."
+            qualifier = f" ({title_hint})" if title_hint else ""
+            chunks.append(f"Text synopsis{qualifier}: {snippet}")
+    if bill_text:
+        processed_keys.update({"text", "texts"})
 
     if not chunks:
         chunks.append(json.dumps(bill_payload, ensure_ascii=False)[:2000])
+        return chunks
+
+    for key, value in bill.items():
+        if key in processed_keys:
+            continue
+        text = _stringify_value(value)
+        if text:
+            label = _humanise_label(key)
+            chunks.append(f"{label}: {text}")
 
     return chunks
 
@@ -176,3 +252,27 @@ def _extract_items(section, *, default_key: str = "items", _depth: int = 0) -> L
             return [section]
 
     return []
+
+
+def _stringify_value(value: Any, limit: int = 800) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        text = value.strip()
+    else:
+        try:
+            text = json.dumps(value, ensure_ascii=False)
+        except TypeError:
+            text = str(value)
+    if not text:
+        return ""
+    if len(text) > limit:
+        text = text[:limit].rstrip() + "..."
+    return text
+
+
+def _humanise_label(key: str) -> str:
+    parts = key.replace("_", " ").replace("-", " ").split()
+    if not parts:
+        return key
+    return " ".join(part.capitalize() for part in parts)

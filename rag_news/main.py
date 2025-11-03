@@ -6,6 +6,7 @@ import json
 import time
 
 from kafka import KafkaProducer
+from .metrics import metrics
 
 from rag_news import config
 from rag_news.services import kafka_utils
@@ -14,6 +15,7 @@ from rag_news.workers import ArticleWorker, LinkCheckWorker, QuestionWorker
 
 
 def main() -> None:
+    app_start_time = time.time()
     print("[boot] starting RAG News pipeline")
     _prepare_output_files()
     kafka_utils.ensure_topics()
@@ -30,6 +32,12 @@ def main() -> None:
     for worker in workers:
         worker.join(timeout=1)
 
+    end_time = time.time()
+    total_time = end_time - app_start_time
+    print(f"Total application processing time: {total_time:.2f} seconds.")
+    print(f"  - Time spent on Congress.gov API calls: {metrics.congress_api_time:.2f} seconds.")
+    print(f"  - Time spent on LLM API calls: {metrics.llm_api_time:.2f} seconds.")
+    print(f"Output written to {config.OUTPUT_FILE}")
 
 def _prepare_output_files() -> None:
     for path in (config.OUTPUT_ARTICLES_FILE, config.OUTPUT_ANSWERS_FILE):

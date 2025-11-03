@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import threading
+import traceback
 from typing import Dict
 
 from kafka import KafkaConsumer, KafkaProducer
@@ -43,22 +44,37 @@ class QuestionWorker(threading.Thread):
             question_id = payload["question_id"]
             question = config.QUESTIONS.get(question_id, "")
 
-            print(f"[question] bill {bill_id.upper()} q{question_id} queued")
-            context = self.api.query_context(bill_id, question)
-            answer = self.llm.answer_question(question, context)
-            print(f"[question] bill {bill_id.upper()} q{question_id} answered")
+            try:
+                print(f"[question] bill {bill_id.upper()} q{question_id} queued")
+                context = self.api.query_context(bill_id, question)
+                answer = self.llm.answer_question(question, context)
+                print(f"[question] bill {bill_id.upper()} q{question_id} answered")
 
-            self.state.record_answer(bill_id, question_id, question, answer)
+                self.state.record_answer(bill_id, question_id, question, answer)
 
-            if self.state.all_questions_answered(bill_id):
-                answers = self.state.fetch_answers(bill_id)
-                self.state.append_answer_bundle(bill_id, answers)
-                print(f"[question] all answers ready for {bill_id.upper()}, dispatching article task")
-                self.producer.send(
-                    config.KAFKA_TOPICS["article"],
-                    {
-                        "bill_id": bill_id,
-                        "bill_type": bill_type,
-                        "congress": congress,
-                    },
-                )
+                if self.state.all_questions_answered(bill_id):
+                    answers = self.state.fetch_answers(bill_id)
+                    self.state.append_answer_bundle(bill_id, answers)
+                    print(f"[question] all answers ready for {bill_id.upper()}, dispatching article task")
+                    self.producer.send(
+                        config.KAFKA_TOPICS["article"],
+                        {
+                            "bill_id": bill_id,
+                            "bill_type": bill_type,
+                            "congress": congress,
+                        },
+                    )
+            except Exception as exc:  # pragma: no cover - defensive guard for worker loop
+                traceback_str = traceback.format_exc(limit=8)
+                error_payload = {
+                    "worker": "question",
+                    "bill_id": bill_id,
+                    "bill_type": bill_type,
+                    "congress": congress,
+                    "question_id": question_id,
+                    "error": str(exc),
+                    "traceback": traceback_str,
+                }
+                print(f"[question] error answering q{question_id} for {bill_id.upper()}: {exc}")
+                self.producer.send(config.KAFKA_TOPICS["error"], error_payload)
+                continue

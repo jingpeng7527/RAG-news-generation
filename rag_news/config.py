@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,58 @@ KAFKA_TOPICS: dict[str, str] = {
 
 CONGRESS_API_KEY = os.getenv("CONGRESS_API_KEY", "")
 CONGRESS_API_BASE_URL = "https://api.congress.gov/v3"
+_bill_resources_env = os.getenv("CONGRESS_BILL_RESOURCES")
+if _bill_resources_env:
+    CONGRESS_BILL_RESOURCES = [
+        resource.strip() for resource in _bill_resources_env.split(",") if resource.strip()
+    ]
+else:
+    CONGRESS_BILL_RESOURCES = [
+        "summaries",
+        "actions",
+        "committees",
+        "amendments",
+        "cosponsors",
+        "subjects",
+        "policy-area",
+        "titles",
+        "relatedbills",
+        "text",
+    ]
+
+
+def _load_json_env(name: str, default: Any) -> Any:
+    raw = os.getenv(name)
+    if not raw:
+        return default
+    try:
+        value = json.loads(raw)
+    except json.JSONDecodeError:
+        return default
+    if isinstance(value, type(default)):
+        return value
+    return default
+
+
+_DEFAULT_ADDITIONAL_ENDPOINTS: list[dict[str, Any]] = [
+    {
+        "alias": "sponsor_details",
+        "path": "member/{bioguideId}",
+        "source": "bill.sponsors",
+        "max": 5,
+    },
+    {
+        "alias": "cosponsor_details",
+        "path": "member/{bioguideId}",
+        "source": "bill.cosponsors",
+        "max": 15,
+    },
+]
+
+CONGRESS_ADDITIONAL_ENDPOINTS: list[dict[str, Any]] = _load_json_env(
+    "CONGRESS_ADDITIONAL_ENDPOINTS",
+    _DEFAULT_ADDITIONAL_ENDPOINTS,
+)
 
 # --- Redis -----------------------------------------------------------------
 
@@ -35,7 +88,7 @@ CACHE_TTL_SECONDS = int(os.getenv("CACHE_TTL_SECONDS", "86400"))  # 24 hours
 # --- Vector Store ----------------------------------------------------------
 
 VECTOR_STORE_PATH = Path(os.getenv("VECTOR_STORE_PATH", "./vector_store")).resolve()
-VECTOR_TOP_K = int(os.getenv("VECTOR_TOP_K", "5"))
+VECTOR_TOP_K = int(os.getenv("VECTOR_TOP_K", "3"))
 
 # --- Output artefacts ------------------------------------------------------
 
@@ -84,8 +137,11 @@ NUM_ARTICLE_WORKERS = int(os.getenv("NUM_ARTICLE_WORKERS", "2"))
 LLM_HOST = os.getenv("LLM_HOST", "127.0.0.1")
 LLM_PORT = os.getenv("LLM_PORT", "11434")
 LLM_API_BASE = f"http://{LLM_HOST}:{LLM_PORT}/api"
-LLM_MODEL = os.getenv("LLM_MODEL", "gemma:2b")
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen3:8b")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
+LLM_REQUEST_TIMEOUT = int(os.getenv("LLM_REQUEST_TIMEOUT", "120"))
+LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "2"))
+LLM_RETRY_BACKOFF_SECONDS = float(os.getenv("LLM_RETRY_BACKOFF_SECONDS", "2.0"))
 
 
 def build_topic_config() -> dict[str, Any]:
